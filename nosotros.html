@@ -1,0 +1,140 @@
+<!--CREADORES: LIZETH DAYANA FIGUEROA LEON Y ARELIZ LAGOS MESA-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"><!--Define la codificación de caracteres de la página.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Indica al navegador cómo debe adaptarse la página en dispositivos móviles.-->
+    <title>Planeta Verde | Conocenos</title>
+    <link rel="stylesheet" href="style.css"><!--Conecta tu archivo HTML con una hoja de estilos CSS llamada style.css.-->
+    <link rel="icon" type="image/png" href="img/icono.png"><!--Especifica el ícono principal del sitio -->
+     <link rel="shortcut icon" href="img/icono.png" type="image/png"><!--Se incluye para dar compatibilidad con navegadores viejos-->
+</head>
+<!-- CONTROL DE ACCESIBILIDAD: TAMAÑO DE LETRA -->
+<div id="font-control">
+    <button id="increase">A+</button>
+    <button id="decrease">A−</button>
+</div>
+
+<script>
+    let currentSize = 100; // tamaño base 100%
+
+    document.getElementById("increase").onclick = function () {
+        currentSize += 10;
+        document.body.style.fontSize = currentSize + "%";
+    };
+
+    document.getElementById("decrease").onclick = function () {
+        if (currentSize > 60) { // límite mínimo
+            currentSize -= 10;
+            document.body.style.fontSize = currentSize + "%";
+        }
+    };
+</script>
+
+<body>
+
+    <header>
+        <h1>Conocenos</h1>
+        <p>Conoce más sobre nuestra misión verde</p>
+    </header>
+<!-- NAVEGADOR DE LA PAGINA -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html" class="activo">Conocenos</a>
+        <a href="juegos.html">Juegos</a>
+        <a href="educate.html">Aprende</a>
+        <a href="noticias.html">Noticias</a>
+    </nav>
+
+    <main>
+         <!-- Sección Misión -->
+    <section class="mision">
+        <h2>🌿 MISIÓN — <em>“Sembrar conciencia, cultivar futuro”</em></h2>
+        <p>
+            En <strong>Planeta Verde</strong>, nuestra misión es educar, inspirar y movilizar a personas de todas las edades para que adopten hábitos sostenibles y conscientes con el entorno.
+            Buscamos convertir el aprendizaje ambiental en una experiencia divertida, práctica e interactiva, combinando tecnología, creatividad y compromiso social.
+        </p>
+        <p>
+            A través de juegos, contenidos educativos, noticias y retos ecológicos, queremos que cada visitante descubra el impacto positivo que puede generar en el planeta desde su hogar, su escuela o su comunidad.
+        </p>
+        <p>
+            Promovemos el respeto por la naturaleza, la empatía con todos los seres vivos y la acción colectiva como herramientas poderosas para construir un mundo más limpio, justo y equilibrado.
+            Creemos que cada clic puede sembrar una semilla de cambio, y que aprender a cuidar la Tierra es el primer paso para cuidar nuestro propio futuro.
+        </p>
+    </section>
+
+    <!-- Sección Visión -->
+    <section class="vision">
+        <h2>☀️ VISIÓN — <em>“Un mundo conectado por la sostenibilidad”</em></h2>
+        <p>
+            Soñamos con un planeta donde la educación ambiental sea accesible, entretenida y parte de la vida cotidiana.
+            Nos visualizamos como una plataforma global de aprendizaje ecológico, reconocida por unir tecnología, conocimiento y acción comunitaria para transformar la manera en que las personas se relacionan con el medio ambiente.
+        </p>
+        <p>
+            Aspiramos a crear una red de usuarios comprometidos que aprendan, compartan y actúen juntos para restaurar los ecosistemas, reducir la contaminación y promover estilos de vida responsables.
+        </p>
+        <p>
+            Queremos que en el futuro, gracias a iniciativas como <strong>Planeta Verde</strong>:
+        </p>
+
+        <ul class="lista-vision">
+            <li>🌱 Los niños aprendan jugando a reciclar.</li>
+            <li>🌎 Los jóvenes lideren proyectos sostenibles.</li>
+            <li>💧 Y los adultos tomen decisiones informadas para proteger los recursos naturales.</li>
+        </ul>
+
+        <p>
+            Soñamos con que cada persona que visite nuestra página se convierta en un agente de cambio, capaz de inspirar a otros y dejar una huella verde en el mundo.
+            Porque cuidar el planeta no es una opción… es nuestra misión compartida. 🌿💧🌞
+        </p>
+    </section>
+
+    <!-- Sección Valores -->
+    <section class="valores">
+        <h2>💚 VALORES</h2>
+        <div class="valores-lista">
+            <div class="valor"><span>🌿</span> <strong>Respeto por la vida</strong></div>
+            <div class="valor"><span>♻️</span> <strong>Compromiso con la acción</strong></div>
+            <div class="valor"><span>💚</span> <strong>Educación inclusiva</strong></div>
+            <div class="valor"><span>☀️</span> <strong>Innovación ecológica</strong></div>
+        </div>
+    </section>
+
+    <!-- Sección Equipo -->
+    <section class="equipo">
+        <h2>👩‍🌾 EQUIPO PLANETA VERDE</h2>
+        <p class="intro-equipo">Nuestro equipo está formado por personas apasionadas por el medio ambiente, la educación y la tecnología. 🌎💪  
+        A continuación puedes ver a nuestro equipo.</p>
+
+        <div class="mosaico-equipo">
+            <!-- Miembro 1 -->
+            <div class="miembro">
+                <div class="foto-equipo">
+                <img src="img/liz.jpg" alt="lizeth">
+                </div>
+                <h3>Lizeth Dayana Figueroa Leon</h3>
+                <p><em>Programadora y diseñadora</em></p>
+                
+            </div>
+
+            <!-- Miembro 2 -->
+            <div class="miembro">
+                <div class="foto-equipo">
+                <img src="img/are.jpg" alt="are">
+                </div>  
+                <h3>Areliz Lagos Mesa</h3>
+                <p><em>Programadora y diseñadora</em></p>
+                
+            </div>
+
+            
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Planeta Verde. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

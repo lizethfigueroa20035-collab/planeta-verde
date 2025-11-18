@@ -1,0 +1,355 @@
+<!--CREADORES: LIZETH DAYANA FIGUEROA LEON Y ARELIZ LAGOS MESA-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"><!--Define la codificación de caracteres de la página.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Indica al navegador cómo debe adaptarse la página en dispositivos móviles.-->
+    <title>Edúcate | Planeta Verde</title>
+    <link rel="stylesheet" href="style.css"><!--Conecta tu archivo HTML con una hoja de estilos CSS llamada style.css.-->
+    <link rel="icon" type="image/png" href="img/icono.png"><!--Especifica el ícono principal del sitio -->
+     <link rel="shortcut icon" href="img/icono.png" type="image/png"><!--Se incluye para dar compatibilidad con navegadores viejos-->
+</head>
+<!-- CONTROL DE ACCESIBILIDAD: TAMAÑO DE LETRA -->
+<div id="font-control">
+    <button id="increase">A+</button>
+    <button id="decrease">A−</button>
+</div>
+
+<script>
+    let currentSize = 100; // tamaño base 100%
+
+    document.getElementById("increase").onclick = function () {
+        currentSize += 10;
+        document.body.style.fontSize = currentSize + "%";
+    };
+
+    document.getElementById("decrease").onclick = function () {
+        if (currentSize > 60) { // límite mínimo
+            currentSize -= 10;
+            document.body.style.fontSize = currentSize + "%";
+        }
+    };
+</script>
+
+<body>
+    
+
+<header>
+    <h1>🌱 Edúcate con Planeta Verde</h1>
+    <p>Aprende sobre sostenibilidad, medio ambiente y acciones que transforman el mundo 🌎</p>
+</header>
+<!-- NAVEGACION DE LA PAGINA -->
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="nosotros.html">Conocenos</a>
+    <a href="juegos.html">Juegos</a>
+    <a href="educate.html" class="activo">Aprende</a>
+    <a href="noticias.html">Noticias</a>
+</nav>
+
+<main class="educate">
+<!-- ESTILO DE EDUCATE -->
+   <style>
+  /* ===== Reset muy ligero para evitar estilos del navegador que "ensucien" ===== */
+  *, *::before, *::after { box-sizing: border-box; }
+  
+
+  /* Contenedor principal para demostrar el contexto */
+  .contenido {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 18px;
+    background: linear-gradient(180deg,#f8fff8 0%, #ffffff 100%);
+    border-radius: 12px;
+    border-left: 6px solid #2b7a4b;
+    box-shadow: 0 6px 18px rgba(10,30,10,0.06);
+  }
+
+  h1 { text-align: center; margin: 6px 0 18px; font-size: 28px; }
+
+  /* ===== Contenedor de botones centrado en fila con espacio entre ellos ===== */
+  .contenedor-botones {
+    display: flex;
+    justify-content: center;   /* centra horizontal */
+    align-items: center;       /* alinea vertical */
+    gap: 18px;                 /* espacio entre botones */
+    margin: 18px 0 8px;
+    flex-wrap: wrap;           /* si la pantalla es pequeña se ajustan a segunda línea */
+  }
+
+  /* ===== Estilo de los botones ===== */
+  .btn-learn {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    padding: 9px 18px;
+    background: #ffffff;
+    border: 2px solid #2b7a4b;
+    color: #2b7a4b;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform .12s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-learn:focus { outline: none; box-shadow: 0 0 0 4px rgba(43,122,75,0.12); }
+
+  .btn-learn:hover {
+    transform: translateY(-3px);
+    background: #2b7a4b;
+    color: #ffffff;
+  }
+
+  /* estilos de icono (si usas emoji o <svg>) para que quede bien alineado */
+  .btn-learn .icon { font-size: 16px; line-height: 1; }
+
+  /* ===== Ejemplo de secciones a mostrar cuando se presionan los botones ===== */
+  .panel {
+    margin-top: 18px;
+    padding: 14px;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #e6f3ea;
+    display: none;            /* oculto por defecto */
+  }
+  .panel.activo { display: block; }
+
+  /* ===== Responsive: menos padding y gap en pantallas pequeñas ===== */
+  @media (max-width: 420px) {
+    .btn-learn { padding: 8px 14px; font-size: 14px; }
+    .contenedor-botones { gap: 12px; }
+    h1 { font-size: 20px; }
+  }
+   .img-estilo {
+            display: block;              
+            margin: 0 auto;              
+            width: 200px;                
+            height: auto;                
+            border-radius: 15px;         
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25); 
+        }
+</style>
+</head>
+<body>
+
+<div class="contenido">
+  <h1>¿Cómo quieres aprender hoy?</h1>
+<img src="img/aprende.jpg" alt="Imagen" class="img-estilo">
+  <!-- MINI MENU EN EDUCATE  -->
+  <div class="contenedor-botones">
+    <button class="btn-learn" data-target="panel-texto"><span class="icon">📘</span>Texto</button>
+    <button class="btn-learn" data-target="panel-imagenes"><span class="icon">🖼️</span>Imágenes</button>
+    <button class="btn-learn" data-target="panel-videos"><span class="icon">🎬</span>Videos</button>
+  </div>
+  
+
+
+  <div id="panel-texto" class="panel">
+    <!-- Qué es la sostenibilidad -->
+    <section class="bloque-educate definicion">
+        <h2>🌿 ¿Qué es la sostenibilidad?</h2>
+        <p>
+            La <strong>sostenibilidad ambiental</strong> implica usar los recursos naturales de forma responsable, 
+            para que las generaciones presentes satisfagan sus necesidades sin comprometer las de las futuras.
+        </p>
+
+        <div class="tarjetas-dimensiones">
+            <div class="tarjeta">
+                <h3>🌳 Ambiental</h3>
+                <p>Protege ecosistemas, cuida la biodiversidad y mejora la calidad del aire, el agua y los suelos.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>🤝 Social</h3>
+                <p>Promueve justicia, equidad y comunidades saludables donde todos tengan oportunidades.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>💰 Económica</h3>
+                <p>Apoya modelos de crecimiento que no degraden el ambiente ni agoten los recursos naturales.</p>
+            </div>
+        </div>
+      
+      
+    </section>
+
+    <!-- Daños del medio ambiente-->
+    <section class="bloque-educate objetivos">
+        <h2>🎯 LOS DAÑOS QUE PUEDE SUFRIR EL MEDIO AMBIENTE Y CÓMO PODEMOS EVITARLOS Y REVERTIRLOS</h2>
+        <p>El medio ambiente es el hogar que compartimos con millones de especies. Es el bosque que respira por nosotros, el río que nos hidrata, el suelo que alimenta nuestras cosechas y el aire que sostiene nuestra vida. Sin embargo, el planeta no está bien.
+  Durante décadas, la humanidad ha hecho uso de la naturaleza sin detenerse a pensar en las consecuencias: más industrias, más consumo, más desechos, más contaminación.
+   Este crecimiento rápido, desordenado y poco sostenible ha puesto en riesgo la salud de la Tierra y, con ello, la nuestra. vamos a ver cuales son los daños principales que hacemos al medio ambiente como se origina, sus efectos y como repararlo juntos:  </p>
+   <img src="img/img1.jpg" alt="Imagen"
+     class="imagen-img"
+     style="width:240px; height:auto; display:block; margin:0 auto;">
+        <ul class="lista-ods">
+            <li>🔥 Cambio climático: la emergencia global</li>
+            <p>El clima del planeta está cambiando a una velocidad nunca vista. Sequías, lluvias intensas, huracanes, incendios… Todo se está volviendo más extremo.</p>
+            <ol>
+                <li>¿Por qué ocurre?</li>
+                <p>Exceso de CO₂ y gases de efecto invernadero.Deforestación,Expansión industrial sin control,Actividades humanas que alteran ecosistemas.</p>
+                <li>Consecuencias</li>
+                <p>Aumento del nivel del mar,Pérdida de cultivos y alimentos,Extremos climáticos, olas de calor, tormentas violentas,Derretimiento de glaciares,Migración de especies y desplazamientos humanos.</p>
+                <li>¿Qué podemos hacer?</li>
+                <p>Ahorrar energía: apagar luces y desconectar aparatos,Usar bicicleta o caminar más,Elegir productos locales y sostenibles,Plantar árboles, muchos árboles,Reducir el consumo de carne y productos procesados.</p>
+            </ol>
+            <li>🌦️ Contaminación del aire: una amenaza invisible pero letal</li>
+            <p>La contaminación del aire es uno de los problemas más serios, porque muchas veces no se ve, pero está ahí: en la niebla gris que cubre las ciudades, en el olor a humo, en los gases que salen de autos y fábricas, en el polvo que respiramos sin darnos cuenta.</p>
+            <ol>
+                <li>¿Cómo se produce?</li>
+                <p>Quema de combustibles como gasolina, diésel, carbón y petróleo,Fábricas que expulsan humo y sustancias químicas,Quema de basura en calles o patios,Humo de cigarrillo y aerosoles,Incendios forestales, muchas veces provocados.</p>
+                <li>Consecuencias</li>
+                <p>Enfermedades respiratorias: asma, bronquitis, alergias,Menor calidad de vida en ciudades densamente pobladas,Aumento de gases de efecto invernadero, que provocan calentamiento global,Afectación de árboles, vegetación y cultivos.</p>
+                <li>¿Cómo evitarlo y mejorar la situación?</li>
+                <p>Reducir el uso del carro: caminar, usar bicicleta, compartir transporte,Evitar quemas de basura o materiales,Cuidar el estado del vehículo para que no libere humo oscuro,Crear y proteger áreas verdes: un solo árbol puede absorber kilos de CO₂ al año,Promover energías renovables y electrodomésticos eficientes.</p>
+            </ol>
+            <li>🐠 Contaminación del agua: la vida en peligro</li>
+            <p>El agua es esencial para todo ser vivo, pero hoy ríos, mares y lagos sufren un daño constante. Residuos, químicos, plástico, petróleo… Todo termina flotando o hundido en el agua que debería estar limpia para peces, plantas y humanos.</p>
+            <ol>
+                <li>¿Cómo se contamina el agua?</li>
+                <p>Basura tirada en alcantarillas, playas, ríos o quebradas, Fábricas que vierten sustancias tóxicas sin tratamiento, Uso excesivo de jabones, aceites y detergentes, Derrames petroleros que destruyen ecosistemas,Agroquímicos usados en exceso en cultivos.</p>
+                <li>Consecuencias</li>
+                <p>Muerte de peces, tortugas, aves y corales,Propagación de enfermedades y contaminación del agua potable,Alteración del equilibrio de los ecosistemas, Pérdida de biodiversidad marina.</p>
+                <li>¿Cómo evitarlo y repararlo?</li>
+                <p>No arrojar basura, aceites o restos químicos al agua,Participar en jornadas de limpieza de ríos, lagos o playas,Usar productos biodegradables, Cuidar el consumo: duchas más cortas, cerrar la llave al cepillarse, reparar fugas,Exigir protección de las fuentes hídricas locales.</p>
+
+            </ol>
+            <li>🌲 Deforestación: el planeta pierde sus pulmones</li>
+            <p>Los bosques no solo son árboles; son el hogar de miles de especies y una fuente de vida. Sin embargo, cada año desaparecen millones de hectáreas, lo que afecta clima, animales y comunidades humanas.</p>
+            <ol>
+                <li>Causas principales</li>
+                <p>Tala para ganadería o agricultura intensiva,Construcción sin planificación,Incendios provocados o irresponsables,Minería ilegal,Madera cortada y vendida sin permisos.</p>
+                <li>Consecuencias</li>
+                <p>Pérdida de hábitats naturales,Extinción de animales y plantas,Sequías y cambios extremos de clima,Menor capacidad de absorber CO₂,Erosión del suelo y deslizamientos.</p>
+                <li>¿Cómo evitarlo y revertirlo?</li>
+                <p>Sembrar árboles en escuelas, barrios y zonas rurales,Evitar el consumo de productos de madera sin certificación,Apoyar programas de reforestación y protección de áreas verdes,Evitar fogatas en áreas forestales,Promover agricultura sostenible.</p>
+            </ol>
+            <li>♻️ Residuos y basura: un problema que crece sin parar</li>
+            <p>El plástico, envases, empaques, botellas y restos que generamos diariamente han creado un problema gigante: toneladas y toneladas de basura sin tratamiento adecuado.</p>
+            <ol>
+                <li>¿Por qué ocurre?</li>
+                <p>Uso de productos de un solo uso (plásticos, vasos, bolsas),Falta de reciclaje en hogares,Comprar más de lo necesario,Falta de cultura ambiental en ciudades.</p>
+                <li>Consecuencias</li>
+                <p>Animales que mueren al ingerir plástico,Calles y espacios verdes contaminados,Acumulación de desechos en mares,Inundaciones por alcantarillas tapadas.</p>
+                <li>¿Cómo reducirlo y mejorar?</li>
+                <p>Separar residuos en tres categorías: reciclaje, orgánicos y basura,Llevar bolsa reutilizable y botella personal,Reusar envases, frascos y objetos útiles,Participar en rutas o puntos de reciclaje.</p>
+            </ol>
+        </ul>
+    </section>
+
+     <!-- Acciones comunitarias -->
+     <section class="bloque-educate comunidad">
+        <h2>🤲 Acciones comunitarias</h2>
+        <p>
+            La sostenibilidad también se construye en comunidad.  
+            Participar en actividades colectivas fortalece el compromiso con el planeta y genera un cambio duradero.
+        </p>
+
+        <div class="tarjetas-comunidad">
+            <div class="tarjeta-comunidad">
+                <h3>🧹 Limpieza ambiental</h3>
+                <p>Organiza jornadas para limpiar ríos, playas o parques junto a tu comunidad.</p>
+            </div>
+            <div class="tarjeta-comunidad">
+                <h3>🌾 Huertos comunitarios</h3>
+                <p>Promueven la agricultura urbana, el trabajo en equipo y la alimentación saludable.</p>
+            </div>
+            <div class="tarjeta-comunidad">
+                <h3>🔧 Reutiliza y repara</h3>
+                <p>Talleres para dar nueva vida a objetos, reducir residuos y fomentar la creatividad.</p>
+            </div>
+        </div>
+       </section>
+  </div>
+
+   <!-- Educación ambiental -->
+    <div id="panel-videos" class="panel">
+  <section class="bloque-educate educacion">
+    <h2>📚 Educación ambiental</h2>
+
+        <!-- Video educativo -->
+       <div class="contenedor-video" >
+        <h3>🎥 Video educativo 1</h3>
+        <video controls class="video-eco" style="width:240px; height:auto; display:block; margin:0 auto;">
+        <source src="img/video1.mp4" type="video/mp4" >
+         Tu navegador no soporta reproducción de video.
+        </video>
+
+       </div>
+
+       <div class="contenedor-video" >
+        <h3>🎥 Video educativo 2</h3>
+        <video controls class="video-eco" style="width:240px; height:auto; display:block; margin:0 auto;">
+        <source src="img/video2.mp4" type="video/mp4" >
+         Tu navegador no soporta reproducción de video.
+        </video>
+
+       </div>
+       <div class="contenedor-video" >
+        <h3>🎥 Video educativo 3</h3>
+        <video controls class="video-eco" style="width:240px; height:auto; display:block; margin:0 auto;">
+        <source src="img/video3.mp4" type="video/mp4" >
+         Tu navegador no soporta reproducción de video.
+        </video>
+
+       </div>
+
+  </section>
+  
+
+  </div>
+
+   
+     <div id="panel-imagenes" class="panel">
+         <!-- Pequeños gestos -->
+     
+     <section class="bloque-educate gestos">
+        <h2>🌼 Pequeños gestos con gran impacto</h2>
+        <ul class="lista-gestos">
+            <li>💡 Apaga luces y equipos cuando no los uses.</li>
+            <li>🚯 Evita plásticos de un solo uso.</li>
+            <li>♻️ Recicla y separa tus residuos correctamente.</li>
+            <li>🌳 Planta árboles o cuida espacios verdes.</li>
+            <li>🚲 Usa transporte activo o público.</li>
+        </ul>
+     </section>
+     
+     <img src="img/trella.png" alt="Imagen"
+     class="imagen-img"
+     style="width:380px; height:auto; display:block; margin:0 auto;">
+     <img src="img/comic1.jpg" alt="Imagen"
+     class="imagen-img"
+     style="width:580px; height:auto; display:block; margin:0 auto;">
+     <img src="img/comic2.jpg" alt="Imagen"
+     class="imagen-img"
+     style="width:580px; height:auto; display:block; margin:0 auto;">
+      
+    </div>
+  </div>
+    <h3>¿Quieres seguir aprendiendo y estando al dia con lo que pasa en nuestra tierra?</h3>
+        <p>ingresa a aqui</p>
+  <a href="noticias.html" class="boton">ponte al dia 🌱</a>
+
+  <script>
+  // Pequeño script para mostrar el panel correspondiente al pulsar botón
+  document.querySelectorAll('.btn-learn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      // ocultar todos
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('activo'));
+      // mostrar el seleccionado
+      const sel = document.getElementById(targetId);
+      if (sel) sel.classList.add('activo');
+    });
+  });
+   </script>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Planeta Verde. Todos los derechos reservados.</p>
+  </footer>
+
+ </body>
+ </html>
+

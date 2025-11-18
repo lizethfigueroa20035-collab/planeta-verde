@@ -1,0 +1,118 @@
+<!--CREADORES: LIZETH DAYANA FIGUEROA LEON Y ARELIZ LAGOS MESA-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!--Define la codificación de caracteres de la página.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Indica al navegador cómo debe adaptarse la página en dispositivos móviles.-->
+    <title>Planeta Verde | Inicio</title>
+    <link rel="stylesheet" href="style.css"><!--Conecta tu archivo HTML con una hoja de estilos CSS llamada style.css.-->
+    <link rel="icon" type="image/png" href="img/icono.png"><!--Especifica el ícono principal del sitio -->
+     <link rel="shortcut icon" href="img/icono.png" type="image/png"><!--Se incluye para dar compatibilidad con navegadores viejos-->
+
+</head>
+<!-- CONTROL DE ACCESIBILIDAD: TAMAÑO DE LETRA -->
+<div id="font-control">
+    <button id="increase">A+</button>
+    <button id="decrease">A−</button>
+</div>
+
+<script>
+    let currentSize = 100; // tamaño base 100%
+
+    document.getElementById("increase").onclick = function () {
+        currentSize += 10;
+        document.body.style.fontSize = currentSize + "%";
+    };
+
+    document.getElementById("decrease").onclick = function () {
+        if (currentSize > 60) { // límite mínimo
+            currentSize -= 10;
+            document.body.style.fontSize = currentSize + "%";
+        }
+    };
+</script>
+
+<body>
+
+    <header>
+        <h1>Bienvenido a Planeta Verde</h1>
+        <p>Un lugar para aprender, aplicar y mejorar</p>
+    </header>
+<!--NAVEGACION EN LA PAGINA-->
+    <nav>
+	<a href="index.html">Inicio</a>
+        <a href="nosotros.html">Conocenos</a>
+        <a href="juegos.html">Juegos</a>
+        <a href="educate.html">Aprende</a>
+        <a href="noticias.html">Noticias</a>
+    </nav>
+
+    <main>
+      <section class="mision"> 
+    <h2>Aprende para un futuro sostenible</h2>
+        <h3>Educacion ambiental, accion y conocimiento para un planeta mas saludable</h3>
+        <p>Bienvenido a Planeta verde. Aprende, actúa y transforma tu futuro. Con recursos prácticos y juegos interactivos, te empoderamos para cuidar el planeta.</p>
+
+<a href="nosotros.html" class="boton">Empieza tu camino verde 🌱</a> <!--BOTON A SECCION NOSOTROS-->
+</section> 
+<section class="mision"> 
+<p>Para empezar solo necesitas decidir dar el primer paso. Hoy no es un día cualquiera: es el día en que eliges cuidar, aunque sea poco. Ese poco, con el tiempo, se convierte en todo. Tal vez hoy solo recicles una botella. Mañana, quizás, invites a tu vecino a plantar un árbol. La semana que viene, tal vez organices una jornada de limpieza en tu barrio. Cada acción, por pequeña que parezca, es una semilla. Y las semillas, cuando se riegan con constancia, crecen en bosques enteros. Este no es un sitio para quienes ya lo saben todo. Es para quienes están listos para aprender, equivocarse, volver a intentarlo y, sobre todo, para cambiar. Tu aprendizaje no es solo tuyo: es un regalo para las generaciones que vendrán.</p>
+
+<img src="img/Mundo.jpg" alt="Imagen"
+     class="imagen-img"
+     style="width:280px; height:auto; display:block; margin:0 auto;">
+
+<a href="juegos.html" class="boton">Gana niveles, no contaminación 🕹</a> <!--BOTON A SECCION JUEGOS-->
+</section> 
+<section class="mision"> 
+<p>¿Qué pasa si aprender a cuidar el planeta pudiera ser tan divertido como un juego? Aquí no se mide tu nivel por cuántos puntos ganas o cuántos errores cometes… se gana conciencia. Cada nivel superado es un árbol más plantado en tu mente, un río más limpio en tu imaginación, un futuro más claro en tus decisiones. En este juego, no hay vidas perdidas: solo oportunidades ganadas. Resuelve acertijos ecológicos, identifica especies en peligro, elige rutas sostenibles, reduce tu huella digital… y verás cómo cada elección correcta no solo te lleva al siguiente nivel, sino que también contribuye a una red global de acciones reales. Porque aquí, cada clic cuenta. Cada decisión, un impacto. Juega. No por entretenimiento… por renovación. Porque el planeta no necesita más espectadores. Necesita jugadores comprometidos.</p>
+
+<img src="img/juego.jpg" alt="Imagen"
+     class="imagen-img"
+     style="width:280px; height:auto; display:block; margin:0 auto;">
+
+<a href="educate.html" class="boton">Conviértete en agente de cambio 📚</a> <!--BOTON A SECCION EDUCATE-->
+</section> 
+<section class="mision"> 
+<p>El cambio no nace de los discursos. Nace de las personas que deciden saber más, entender mejor y actuar con propósito. Este no es un curso tradicional con exámenes ni calificaciones. Es un despertar. Un viaje personal donde lo que aprendes no se olvida… se vive. Aquí, no te enseñamos qué hacer: te acompañamos a descubrir por qué lo debes hacer. Desde cómo reducir el plástico en tu hogar hasta cómo convencer a tu escuela de adoptar compostaje, cada recurso está pensado para que lo apliques, no solo para que lo leas. Lo que aprendas aquí no se queda en la pantalla. Se transforma en hábitos, en conversaciones, en acciones visibles. Y cuando lo vives, cambias cosas: tu entorno, tu comunidad, tu futuro. Empieza por aquí. Porque el agente de cambio que el mundo necesita… ya está dentro de ti.</p>
+
+<img src="img/aprende.jpg" alt="Imagen"
+     class="imagen-img"
+     style="width:280px; height:auto; display:block; margin:0 auto;">
+
+<a href="noticias.html" class="boton">Sé parte del cambio real 🌍</a> <!--BOTON A SECCION NOTICIAS-->
+</section> 
+<section class="mision">
+<p>Las noticias no son solo palabras en una pantalla. Son historias de comunidades que se levantan, de niños que limpian ríos con sus propias manos, de agricultores que devuelven la vida a la tierra con técnicas ancestrales y nuevas tecnologías. Son madres que enseñan a sus hijos a cultivar hierbas en balcones, de jóvenes que reivindican el derecho a un planeta vivo. Lo que lees aquí no es solo información… es una llamada. Una llamada que no pide tu firma, sino tu presencia. ¿Vas a leerla y seguir tu camino? O ¿vas a unirte a ella? A convertirte en parte de esa historia. Porque el cambio real no se mide en likes ni compartidos. Se mide en manos que se levantan, en voces que se suman, en decisiones que se repiten día tras día. Aquí no solo informamos. Conectamos. Inspira. Y te invita a ser el próximo capítulo de esta historia. ¿Estás listo para escribirlo?</p>
+
+
+<img src="img/noticias.jpg" alt="Imagen"
+     class="imagen-img"
+     style="width:280px; height:auto; display:block; margin:0 auto;">
+</section>
+<section class="valores">
+    
+    <div class="textoh3">
+        <p>"Un clic a la vez" vincula la navegación con el impacto real.</p>
+        </div> 
+    
+
+<img src="img/Dos img.jpg" alt="Imagen"
+     class="imagen-img"
+     style="width:480px; height:auto; display:block; margin:0 auto;">
+</section>
+
+</main>
+
+</div>
+
+
+    </main>
+<!--PIE DE PAGINA-->
+    <footer>
+        <p>&copy; 2025 Planeta Verde. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

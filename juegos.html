@@ -1,0 +1,470 @@
+<!--CREADORES: LIZETH DAYANA FIGUEROA LEON Y ARELIZ LAGOS MESA-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"><!--Define la codificación de caracteres de la página.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Indica al navegador cómo debe adaptarse la página en dispositivos móviles.-->
+    <title>Planeta Verde | Juegos</title>
+    <link rel="stylesheet" href="style.css"><!--Conecta tu archivo HTML con una hoja de estilos CSS llamada style.css.-->
+    <link rel="icon" type="image/png" href="img/icono.png"><!--Especifica el ícono principal del sitio -->
+     <link rel="shortcut icon" href="img/icono.png" type="image/png"><!--Se incluye para dar compatibilidad con navegadores viejos-->
+</head>
+<!-- CONTROL DE ACCESIBILIDAD: TAMAÑO DE LETRA -->
+<div id="font-control">
+    <button id="increase">A+</button>
+    <button id="decrease">A−</button>
+</div>
+
+<script>
+    let currentSize = 100; // tamaño base 100%
+
+    document.getElementById("increase").onclick = function () {
+        currentSize += 10;
+        document.body.style.fontSize = currentSize + "%";
+    };
+
+    document.getElementById("decrease").onclick = function () {
+        if (currentSize > 60) { // límite mínimo
+            currentSize -= 10;
+            document.body.style.fontSize = currentSize + "%";
+        }
+    };
+</script>
+
+<body>
+
+    <header>
+        <h1>Juegos ecológicos</h1>
+        <p>Aprende mientras te diviertes</p>
+    </header>
+<!--NAVEGACION EN LA PAGINA-->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Conocenos</a>
+        <a href="juegos.html" class="activo">Juegos</a>
+        <a href="educate.html">Aprende</a>
+        <a href="noticias.html">Noticias</a>
+    </nav>
+
+    <main>
+
+       <h1> Mini Juegos Ambientales 🌿</h1>
+        <!--MINI NAVEGADOR DENTRO  JUEGOS-->
+        <div class="edu-menu">
+    <button onclick="location.href='#memoria'">♻️ memoria Ambiental</button>
+    <button onclick="location.href='#adivina'">🖼 adivina el animal</button>
+    <button onclick="location.href='#quiz'">📖 quiz</button>
+     </div>
+    
+    </main>
+    <!--ESTILO DE JUEGOS-->
+    <style>
+    
+
+    h1, h2 {
+        text-align: center;
+        color: #2e7d32;
+    }
+
+    /* simple container for each game + controls */
+    .game-block {
+        width: 90%;
+        max-width: 760px;
+        margin: 14px auto 26px auto;
+        background: white;
+        padding: 14px 18px 18px 18px;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .game-controls {
+        display:flex;
+        gap:8px;
+        justify-content:flex-end;
+        margin-bottom:10px;
+    }
+
+    .small-btn {
+        padding:8px 12px;
+        background:#66bb6a;
+        color:white;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        font-weight:600;
+    }
+    .small-btn.secondary{ background:#4caf50 }
+
+    /* -------------------- MEMORAMA --------------------- */
+    .memorama {
+        width: 330px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 80px);
+        gap: 10px;
+    }
+
+    .card {
+        width: 80px;
+        height: 80px;
+        background: #c8e6c9;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+        user-select: none;
+    }
+
+    .card.reveal {
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    
+
+    /* -------------------- ADIVINA EL ANIMAL --------------------- */
+    .adivina-container {
+        width: 80%;
+        max-width: 400px;
+        background: #fff;
+        padding: 20px;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+        background: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 17px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .btn:hover {
+        background: #1b5e20;
+    }
+
+    /* -------------------- QUIZ --------------------- */
+    .quiz-container {
+        width: 90%;
+        max-width: 760px;
+        margin: 18px auto;
+        background: white;
+        padding: 16px 18px 22px 18px;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .quiz-question { font-weight:700; margin-bottom:10px; }
+    .quiz-option { 
+        display:block; 
+        width:100%; 
+        text-align:left;
+        padding:10px; 
+        margin:8px 0; 
+        border-radius:8px; 
+        border:0; 
+        background:#f1f8e9; 
+        cursor:pointer;
+    }
+    .quiz-option.correct { background:#a5d6a7 }
+    .quiz-option.incorrect { background:#ef9a9a }
+
+    /* responsive */
+    @media (max-width:420px){
+        .memorama { grid-template-columns: repeat(4, 64px); gap:8px }
+        .card { width:64px; height:64px; font-size:24px }
+        #game-container { width:260px; height:260px }
+    }
+    /* MENÚ DE EDUCATÉ */
+.edu-menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.edu-menu button {
+    background: #6ecf86;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+.edu-menu button:hover {
+    background: #4aa765;
+    transform: scale(1.05);
+}
+
+/* SECCIONES EDUCATIVAS */
+.edu-section {
+    background: white;
+    padding: 25px;
+    margin: 40px auto;
+    width: 80%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Tamaño infografía */
+.infografia {
+    width: 280px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- MEMORAMA -->
+<section id="memoria" class="edu-section">
+
+<div class="game-block" id="block-memorama">
+    <div class="game-controls">
+        <button class="small-btn" id="reset-memorama">Reiniciar Memorama</button>
+    </div>
+
+    <h2 style="margin-top:6px">🃏 Memorama Ambiental</h2>
+    <div class="memorama" id="memorama"></div>
+</div>
+</section>
+
+<!-- ADIVINA EL ANIMAL -->
+ <section id="adivina" class="edu-section">
+<div class="game-block" id="block-adivina">
+    <div class="game-controls">
+        <button class="small-btn" id="reset-adivina">Reiniciar Adivina</button>
+    </div>
+
+    <h2 style="margin-top:6px">🐾 Adivina el Animal</h2>
+    <div class="adivina-container">
+        <p id="pista">Pista: “Soy grande, gris y tengo trompa”.</p>
+
+        <input type="text" id="respuesta" placeholder="¿Qué animal es?" style="
+            width:100%; padding:10px; margin-top:10px; border-radius:5px; border:1px solid #777;">
+        
+        <button class="btn" id="btn-responder">Responder</button>
+        
+        <p id="mensaje" style="text-align:center; font-weight:bold; margin-top:10px;"></p>
+    </div>
+</div>
+</section>
+<!-- QUIZ -->
+ <section id="quiz" class="edu-section">
+<div class="quiz-container" id="quiz-block">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px">
+        <h2 style="margin:0; color:#2e7d32">Quiz Ambiental ♻️</h2>
+        <button class="small-btn" id="reset-quiz">Reiniciar Quiz</button>
+    </div>
+
+    <p class="quiz-question" id="quiz-question"></p>
+    <div id="quiz-options"></div>
+    <p id="quiz-feedback" style="text-align:center; font-weight:bold; margin-top:10px"></p>
+    <p style="text-align:center; margin-top:6px">Puntaje: <span id="quiz-score">0</span> / <span id="quiz-total">0</span></p>
+</div>
+</section>
+<!-- SCRIPTS -->
+<script>
+/* ------------------------ MEMORAMA -------------------------- */
+(function(){
+    const emojis = ["🌎","🌿","🔥","💧","🌱","🌳","🐢","🦋"];
+    let cardsArrayOrig = [...emojis, ...emojis];
+
+    let memoramaEl = document.getElementById("memorama");
+    let resetMemBtn = document.getElementById("reset-memorama");
+
+    let firstCard = null;
+    let secondCard = null;
+    let lock = false;
+    let solvedCount = 0;
+
+    function initMemorama(){
+        // reset
+        memoramaEl.innerHTML = "";
+        firstCard = null; secondCard = null; lock = false; solvedCount = 0;
+        const cards = [...cardsArrayOrig];
+        cards.sort(() => Math.random() - 0.5);
+        cards.forEach(icon => {
+            let card = document.createElement("div");
+            card.classList.add("card");
+            card.dataset.icon = icon;
+            card.textContent = ""; // hidden
+            card.onclick = () => reveal(card);
+            memoramaEl.appendChild(card);
+        });
+    }
+
+    function reveal(card) {
+        if (lock || card.classList.contains("reveal")) return;
+
+        card.classList.add("reveal");
+        card.textContent = card.dataset.icon;
+
+        if (!firstCard) {
+            firstCard = card;
+        } else {
+            secondCard = card;
+            lock = true;
+
+            setTimeout(() => {
+                if (firstCard.dataset.icon !== secondCard.dataset.icon) {
+                    firstCard.classList.remove("reveal");
+                    secondCard.classList.remove("reveal");
+                    firstCard.textContent = "";
+                    secondCard.textContent = "";
+                } else {
+                    // matched
+                    solvedCount += 2;
+                }
+                firstCard = null;
+                secondCard = null;
+                lock = false;
+            }, 800);
+        }
+    }
+
+    resetMemBtn.addEventListener("click", initMemorama);
+
+    // initialise on load
+    initMemorama();
+})();
+
+
+/* -------------------- ADIVINA EL ANIMAL ---------------------- */
+(function(){
+    const pistaEl = document.getElementById("pista");
+    const inputEl = document.getElementById("respuesta");
+    const btn = document.getElementById("btn-responder");
+    const mensajeEl = document.getElementById("mensaje");
+    const resetAdivinaBtn = document.getElementById("reset-adivina");
+
+    const pista = "Soy grande, gris y tengo trompa";
+    const respuestaCorrecta = "elefante";
+
+    function comprobar(){
+        const val = inputEl.value.trim().toLowerCase();
+        if (!val) {
+            mensajeEl.textContent = "Escribe una respuesta.";
+            mensajeEl.style.color = "orange";
+            return;
+        }
+        if (val === respuestaCorrecta) {
+            mensajeEl.textContent = "¡Correcto! 🐘";
+            mensajeEl.style.color = "green";
+        } else {
+            mensajeEl.textContent = "Incorrecto ❌ Intenta otra vez.";
+            mensajeEl.style.color = "red";
+        }
+    }
+
+    btn.addEventListener("click", comprobar);
+
+    function resetAdivina(){
+        inputEl.value = "";
+        mensajeEl.textContent = "";
+        pistaEl.textContent = "Pista: “" + pista + "”.";
+    }
+
+    resetAdivinaBtn.addEventListener("click", resetAdivina);
+
+    // init
+    resetAdivina();
+})();
+
+/* -------------------- QUIZ AMBIENTAL ---------------------- */
+(function(){
+    const preguntas = [
+        { q: "¿Cuál de estos materiales es reciclable?", opts: ["Papel","Comida","Arena"], ans: 0 },
+        { q: "¿Qué color corresponde al reciclaje del vidrio?", opts: ["Azul","Verde","Rojo"], ans: 1 },
+        { q: "¿Cuál es la forma correcta de ahorrar agua?", opts: ["Dejar la llave abierta","Duchas cortas","Lavar el carro con manguera"], ans: 1 },
+        { q: "¿Qué animal ayuda a polinizar plantas?", opts: ["Abeja","Tiburón","Elefante"], ans: 0 },
+        { q: "¿Cuál es una fuente de energía renovable?", opts: ["Carbón","Gas natural","Solar"], ans: 2 }
+    ];
+
+    const qEl = document.getElementById("quiz-question");
+    const optsEl = document.getElementById("quiz-options");
+    const feedbackEl = document.getElementById("quiz-feedback");
+    const scoreEl = document.getElementById("quiz-score");
+    const totalEl = document.getElementById("quiz-total");
+    const resetQuizBtn = document.getElementById("reset-quiz");
+
+    let idx = 0;
+    let puntos = 0;
+
+    totalEl.textContent = preguntas.length;
+
+    function renderQuestion(){
+        feedbackEl.textContent = "";
+        optsEl.innerHTML = "";
+        const p = preguntas[idx];
+        qEl.textContent = (idx+1) + ". " + p.q;
+
+        p.opts.forEach((op, i) => {
+            const b = document.createElement("button");
+            b.className = "quiz-option";
+            b.textContent = op;
+            b.onclick = () => selectOption(b, i);
+            optsEl.appendChild(b);
+        });
+    }
+
+    function selectOption(button, i){
+        // disable further clicks
+        Array.from(optsEl.children).forEach(ch => ch.disabled = true);
+
+        const correct = preguntas[idx].ans;
+        if (i === correct) {
+            button.classList.add("correct");
+            feedbackEl.textContent = "¡Correcto!";
+            puntos++;
+        } else {
+            button.classList.add("incorrect");
+            feedbackEl.textContent = "Incorrecto";
+            // mark correct one
+            const children = Array.from(optsEl.children);
+            if (children[correct]) children[correct].classList.add("correct");
+        }
+        scoreEl.textContent = puntos;
+        // next
+        idx++;
+        setTimeout(()=>{
+            if (idx < preguntas.length) {
+                renderQuestion();
+            } else {
+                feedbackEl.textContent = "Quiz completado 🎉";
+            }
+        }, 900);
+    }
+
+    resetQuizBtn.addEventListener("click", ()=>{
+        idx = 0; puntos = 0; scoreEl.textContent = puntos; renderQuestion(); feedbackEl.textContent = "";
+    });
+
+    // init
+    renderQuestion();
+})();
+
+</script>
+
+    <footer>
+        <p>&copy; 2025 Planeta Verde. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

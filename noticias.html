@@ -1,0 +1,188 @@
+<!--CREADORES: LIZETH DAYANA FIGUEROA LEON Y ARELIZ LAGOS MESA-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"><!--Define la codificación de caracteres de la página.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Indica al navegador cómo debe adaptarse la página en dispositivos móviles.-->
+    <title>Planeta Verde | Noticias</title>
+    <link rel="stylesheet" href="style.css"><!--Conecta tu archivo HTML con una hoja de estilos CSS llamada style.css.-->
+    <link rel="icon" type="image/png" href="img/icono.png"><!--Especifica el ícono principal del sitio -->
+     <link rel="shortcut icon" href="img/icono.png" type="image/png"><!--Se incluye para dar compatibilidad con navegadores viejos-->
+     <!-- ESTILOS DE NOTICIAS -->
+     <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f3f7f3;
+        }
+
+    
+        /* --- CONTENEDOR --- */
+        .noticias-contenedor {
+            width: 80%;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .noticias-contenedor h2 {
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        /* --- TARJETAS DE NOTICIAS --- */
+        .noti {
+            display: flex;
+            align-items: center;
+            background: #f4f8f4;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform .2s;
+        }
+
+        .noti:hover {
+            transform: scale(1.01);
+        }
+
+        .noti img {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .noti-texto h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #2d7a33;
+        }
+
+        .noti-texto p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .noti-texto a {
+            color: #0a6bc2;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .noti-texto a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<!-- CONTROL DE ACCESIBILIDAD: TAMAÑO DE LETRA -->
+<div id="font-control">
+    <button id="increase">A+</button>
+    <button id="decrease">A−</button>
+</div>
+
+<script>
+    let currentSize = 100; // tamaño base 100%
+
+    document.getElementById("increase").onclick = function () {
+        currentSize += 10;
+        document.body.style.fontSize = currentSize + "%";
+    };
+
+    document.getElementById("decrease").onclick = function () {
+        if (currentSize > 60) { // límite mínimo
+            currentSize -= 10;
+            document.body.style.fontSize = currentSize + "%";
+        }
+    };
+</script>
+
+<body>
+
+    <header>
+        <h1>Noticias ecológicas</h1>
+        <p>Entérate de lo último en sostenibilidad</p>
+    </header>
+<!-- NAVEGADOR DE LA PAGINA -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Conocenos</a>
+        <a href="juegos.html">Juegos</a>
+        <a href="educate.html">Aprende</a>
+        <a href="noticias.html" class="activo">Noticias</a>
+    </nav>
+
+    <main>
+        
+        
+      <div class="noticias-contenedor">
+    <h2>🌿 Últimas Noticias Ambientales</h2>
+    <p>Explora estas páginas confiables y actualizadas sobre medio ambiente, ecología y sostenibilidad.</p>
+
+    <!-- NOTICIA 1 -->
+    <div class="noti">
+        <img src="img/mongabay.jpg" alt="Mongabay Latam">
+        <div class="noti-texto">
+            <h3>🌱 Mongabay Latam</h3>
+            <p>En esta pagina es especializado en ecologia, biodiversidad,cambio climatico y conservacion en amaerica latina</p>
+            <p>Lo bueno: cubre historias específicas de la región hispano-americana, lo cual te permite vincular la información al contexto latino.</p>
+            <p>contenido 100% en espeñol y facil de entender</p>
+            <a href="https://es.mongabay.com/?utm_source" target="_blank">Visitar sitio →</a>
+        </div>
+    </div>
+
+    <!-- NOTICIA 2 -->
+    <div class="noti">
+        <img src="img/econoticas.jpg" alt="EcoNoticias">
+        <div class="noti-texto">
+            <h3>🌎 EcoNoticias</h3>
+            <p>Portal de noticias sobre medio ambiente, naturaleza, renovables, sostenibilidad.</p>
+            <p>Lo bueno: frecuencia de publicación alta, variedad de temas (política, tecnologías limpias, consumo).</p>
+            <a href="https://www.ecoticias.com/?utm_source" target="_blank">Visitar sitio →</a>
+        </div>
+    </div>
+
+    <!-- NOTICIA 3 -->
+    <div class="noti">
+        <img src="img/noticiasambientales.jpg" alt="Noticias Ambientales">
+        <div class="noti-texto">
+            <h3>🍃 Noticias Ambientales</h3>
+            <p>Medio digital que agrupa noticias relacionadas al medio ambiente, cambio climático, energía y más.</p>
+            <p>Lo bueno: enfoque amplio, ideal si quieres estar al tanto de muchas aristas del tema.</p>
+            <a href="https://noticiasambientales.com/?utm_source" target="_blank">Visitar sitio →</a>
+        </div>
+    </div>
+    <!-- NOTICIA 4 -->
+    <div class="noti">
+        <img src="img/fundacion.jpg" alt="Noticias Ambientales">
+        <div class="noti-texto">
+            <h3>Fundación Ambiente y Medio</h3>
+            <p>Canal dedicado a la educación y comunicación ambiental, historias de protagonistas del medio ambiente.</p>
+            <p>Lo bueno: formato audiovisual, que facilita ver y entender situaciones reales.</p>
+            <a href="https://www.youtube.com/channel/UCGKO3HEa5KaBULuls0Wyiig" target="_blank">Visitar sitio →</a>
+        </div>
+    </div>
+    <!-- NOTICIA 5 -->
+    <div class="noti">
+        <img src="img/freedocumental.jpg" alt="Noticias Ambientales">
+        <div class="noti-texto">
+            <h3>Free Documentary  Nature Español</h3>
+            <p>Canal de documentales en español sobre naturaleza, fauna, ecosistemas y conservación.</p>
+            <p>Lo bueno: ofrece material más profundo, ideal para ver procesos, globalidad, impacto ambiental.</p>
+            <a href="https://www.youtube.com/@FDNatureEspanol" target="_blank">Visitar sitio →</a>
+        </div>
+    </div>
+
+</div>
+        
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2025 Planeta Verde. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,396 @@
+/*CREADORES: LIZETH DAYANA FIGUEROA LEON Y ARELIZ LAGOS MESA*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/* MARCO DIFUMINADO */
+body {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    box-shadow: inset 0 0 50px rgba(46, 204, 113, 0.6);
+}
+
+/* Panel flotante para aumentar/disminuir letra */
+#font-control {
+    position: fixed;
+    right: 20px;
+    top: 40%;
+    background: #ffffffdd;
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 9999;
+}
+
+#font-control button {
+    border: none;
+    background: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#font-control button:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+
+
+/* Encabezado */
+header {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Navegación */
+nav {
+    background-color: #69ca85;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.activo {
+    text-decoration: underline;
+    color: #004b1c;
+}
+
+/* Contenido principal */
+main {
+    padding: 20px;
+    background: white;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Botón */
+.boton {
+    display: inline-block;
+    background-color: #50b337;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.boton:hover {
+    background-color: #3e8e2b;
+}
+
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+}
+
+
+/* ----------- SECCIÓN: VALORES ----------- */
+.valores {
+    background: linear-gradient(180deg, #e9f9ec 0%, #ffffff 100%);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    text-align: center;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.05);
+}
+
+.valores h2 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.valores-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.valor {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    color: #2f7f2b;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease;
+}
+
+.valor:hover {
+    transform: scale(1.05);
+}
+
+/* ----------- SECCIÓN: EQUIPO ----------- */
+.equipo {
+    background: linear-gradient(180deg, #f6fff7 0%, #ffffff 100%);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.06);
+}
+
+.equipo h2 {
+    text-align: center;
+    color: #2e7d32;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+.intro-equipo {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.05em;
+}
+
+.mosaico-equipo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.miembro {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.miembro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.foto-equipo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #d9f2dc; 
+    margin: 0 auto 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.foto-equipo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.miembro h3 {
+    color: #2f7f2b;
+    margin-bottom: 5px;
+}
+
+.miembro p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+
+
+/* ----------- SECCIÓN: SOBRE NOSOTROS ----------- */
+.nosotros {
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    line-height: 1.7;
+}
+
+.nosotros h2 {
+    color: #2e7d32;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.nosotros p {
+    text-align: justify;
+    margin-bottom: 15px;
+    font-size: 1.05em;
+    color: #333;
+}
+
+.mision, .vision {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-left: 5px solid #69ca85;
+    background: linear-gradient(180deg, #f4fff4 0%, #ffffff 100%);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mision:hover, .vision:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.lista-vision {
+    margin: 15px 0;
+    padding-left: 30px;
+    list-style: none;
+}
+
+.lista-vision li {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1.05em;
+    color: #2f7f2b;
+    position: relative;
+    padding-left: 25px;
+}
+
+.lista-vision li::before {
+    content: "🌿";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* ----------- SECCIÓN: EDUCATE ----------- */
+.educate {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    line-height: 1.7;
+}
+
+.bloque-educate {
+    margin-bottom: 50px;
+    background: linear-gradient(180deg, #f6fff8 0%, #ffffff 100%);
+    border-left: 5px solid #69ca85;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bloque-educate:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.educate h2 {
+    color: #2e7d32;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.educate h3 {
+    color: #317b3d;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.educate p, .educate li {
+    color: #333;
+    font-size: 1.05em;
+}
+
+/* Tarjetas (dimensiones, comunidad, recursos) */
+.tarjetas-dimensiones, .recursos, .tarjetas-comunidad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.tarjeta, .recurso, .tarjeta-comunidad {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.06);
+    width: 260px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover, .recurso:hover, .tarjeta-comunidad:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+/* Listas */
+.lista-ods, .lista-gestos {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.lista-ods li, .lista-gestos li {
+    margin-bottom: 8px;
+    padding: 10px;
+    background: #f3fdf4;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.lista-ods li:hover, .lista-gestos li:hover {
+    background: #e4fbe6;
+}
+
+/* Adaptación móvil */
+@media (max-width: 700px) {
+    .tarjeta, .recurso, .tarjeta-comunidad {
+        width: 100%;
+    }
+}
+
+
+
+.textoh3{
+    color: #2e7d32;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+
+
+
+
